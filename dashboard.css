@@ -1,0 +1,335 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+}
+
+body {
+  padding: 0px 40px;
+}
+
+/*---- nav-bar----*/
+#header {
+  padding: 0px 20px;
+  align-items: center;
+  height: 40px;
+  display: flex;
+  flex-direction: columns-reverse;
+  position: fixed;
+}
+#hamburger {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.fa-solid {
+  visibility: hidden;
+}
+#header h1 {
+  padding-bottom: 5px;
+  background-color: transparent;
+}
+
+#navMenu {
+  display: flex;
+  margin-left: 78vw;
+}
+
+#navBar {
+  display: flex;
+}
+#contents {
+  width: 80%;
+  height: 100%;
+  margin-left: 22%;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+}
+#dashMenu {
+  width: 20%;
+  border: 1px solid;
+  background-color: rgba(248, 232, 96, 0.63);
+  position: fixed;
+  top: 45px;
+  height: 95vh;
+}
+.navMenu {
+  border: 1px solid;
+  margin: 5px;
+  text-align: center;
+  padding: 30px 0% 10px;
+  background-color: transparent;
+  height: 40px;
+}
+.box {
+  border: 1px solid;
+  border-radius: 5px;
+  margin-left: 25px;
+  width: 100px;
+  padding: 10px;
+  background-color: rgba(248, 232, 96, 0.63);
+}
+.box label {
+  background-color: transparent;
+}
+.box p {
+  background-color: transparent;
+}
+#dashMenu ul {
+  background-color: transparent;
+}
+#statistics {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin-top: 2%;
+  margin-left: 16%;
+}
+
+#navMenu li {
+  margin-right: 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  background-color: transparent;
+  width: auto;
+}
+
+#navMenu .btn {
+  height: 30px;
+  width: auto;
+  text-align: center;
+  padding: 5px 10px;
+  background-color: rgba(248, 232, 96, 0.63);
+  border-radius: 10px;
+}
+
+/*------end of nav-bar--------*/
+span {
+  color: rgba(248, 232, 96, 0.63);
+}
+
+.btn {
+  height: 30px;
+  width: auto;
+  text-align: center;
+  padding: 5px 10px;
+  background-color: rgba(248, 232, 96, 0.63);
+  border-radius: 10px;
+}
+
+#dashBoard {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+
+  height: auto;
+}
+
+#heroDashBoard {
+  align-items: center;
+  text-align: center;
+  border: 1px solid;
+
+  padding: 10;
+  height: 70%;
+  width: 88%;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  margin-bottom: 200px;
+}
+#heroDashboard img {
+  width: 50%;
+  border: 1px solid rgba(248, 232, 96, 0.63);
+  margin-top: 50px;
+}
+
+.cards {
+  border: 0.1px solid rgba(248, 232, 96, 0.63);
+  width: 700px;
+  height: auto;
+  margin-left: 5%;
+  border-radius: 30px;
+  padding: 20px;
+  margin-top: 50px;
+  text-align: left;
+}
+#articles {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+#one {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -350px;
+  padding: 20px;
+  visibility: visible;
+  z-index: 1;
+  margin-left: 320px;
+  box-shadow: currentColor;
+  height: 50vh;
+}
+#one label {
+  margin-top: 10px;
+}
+#one input {
+  height: 50px;
+}
+.error {
+  color: red;
+  background-color: transparent;
+}
+#trendings {
+  width: 85%;
+  border: 1px solid;
+  height: 100vh;
+  margin-top: -500px;
+  margin-left: 5%;
+  background-color: rgb(79, 71, 71);
+}
+#trending label {
+  padding-top: 10px;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+input {
+  width: auto;
+  background-color: white;
+  color: black;
+}
+#fileUploader {
+  width: 100%;
+}
+a {
+  background-color: transparent;
+}
+
+#one textarea {
+  width: 100%;
+  margin-left: 0px;
+  background-color: white;
+  margin-top: 5px;
+}
+.dashContainer {
+  border: 1px solid;
+  width: 85%;
+  height: 600px;
+  margin-left: 60px;
+  text-align: center;
+  justify-content: center;
+}
+.paragraph {
+  width: 50%;
+  margin-left: 20%;
+  height: 100px;
+}
+.displaySection {
+  width: 100%;
+  height: 500px;
+  background-color: rgba(248, 232, 96, 0.63);
+}
+.dashHeader {
+  display: flex;
+  background-color: transparent;
+  width: 100%;
+}
+.dashHeader li {
+  background-color: transparent;
+  border: 1px solid black;
+  width: 200px;
+}
+#ide {
+  width: 20px;
+}
+.descripti {
+  width: auto;
+  max-width: 300px;
+}
+@media screen and (max-width: 425px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  #navMenu li {
+    margin-right: 0px;
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: transparent;
+    width: auto;
+  }
+  #dashMenu {
+    width: 20%;
+    position: fixed;
+    background-color: black;
+    top: 30px;
+    left: 80px;
+    z-index: unset;
+    height: auto;
+    opacity: 2;
+    display: flex;
+  }
+  #dashMenu li {
+    width: 100%;
+    background-color: rgba(248, 232, 96, 0.63);
+    height: auto;
+    opacity: 1;
+    padding: 0;
+    border-bottom: 1px solid black;
+  }
+  .box {
+    display: flex;
+    width: auto;
+    padding: 0px;
+  }
+  #navMenu {
+    margin-left: 2vw;
+  }
+  #one {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 0px;
+    height: auto;
+  }
+  .dashContainer {
+    border: 1px solid red;
+    width: 100%;
+    margin-left: 0px;
+    height: auto;
+  }
+  #contents {
+    border: 1px solid blue;
+    width: 100%;
+    margin-left: 10px;
+  }
+  #heroDashBoard {
+    border: 1px solid;
+
+    padding: 10;
+    height: 300px;
+    width: 88%;
+    flex-wrap: wrap;
+    margin-left: 10px;
+  }
+  #hamburger {
+    display: flex;
+
+    width: 130px;
+    padding-bottom: 0px;
+  }
+  .fa-solid {
+    visibility: visible;
+    margin-left: 4px;
+  }
+}

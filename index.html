@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>website</title>
+    <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> -->
+    
+    <!-- <script>
+      tinymce.init({
+        selector: '#messageContents',
+        plugins: [
+          'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
+          'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
+          'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount'
+        ],
+        toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | ' +
+          'alignleft aligncenter alignright alignjustify | ' +
+          'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+      });
+    </script> -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/b25eccd8aa.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="header">
+     <div id="hamburger"><h1>Ol<span>iv</span>is</h1>
+      <i class="fa-solid fa-bars"></i>
+      </div>
+      
+      <div id="navBar">
+        
+        <ul id="navMenu">
+          <li> <a href="#home">Home</a> </li>
+          <li> <a href="#about_Me">About</a> </li>
+          <li> <a href="#skills">Skills</a> </li>
+          <li> <a href="#portifolio">Portifofio</a> </li>
+          <li> <a href="#blogs">Blog</a> </li>
+          <li> <a href="#contact_me">contact me</a> </li>
+          <li class="btn">  <a href="#loginForm">login</a> </li>
+        </ul>
+      </div>
+    </div>
+    <section id="home">
+      <div class="textContents">
+        <h2>Hi,I’m <span>Olivier Serge,</span></h2>
+        <h1>Jr UI and Graphic Designer</h1>
+        <p>
+          There are more ways to choose the best or to know who is your best
+          candidate for the job.<br />
+          might be the one but before you decide there are a lot to know more
+          about me so,Know me
+        </p>
+        <div id="homeBtns">
+          <button class="btn"><a href="#about_Me">About Me</a> </button>
+          <button class="btn" onclick="open('http://olivierserge.github.io/OlivierCV/', '_blank');">check CV</button>
+        </div>
+      </div>
+    
+      <div class="profile">
+        <img src="./images/homeimg (2).jpg" />
+      </div>
+    </section>
+    <section id="about_Me">
+      <h2>About Me</h2>
+      <div class="cardsContainer">
+        <div class="cards">
+          <h3>Who I am</h3>
+          <div class="underline"></div>
+
+          <ul>
+            <li class="cardsList">-University Graduate</li>
+            <li class="cardsList">-UI&Graphic designer</li>
+            <li class="cardsList">-Frontend developer</li>
+            <li class="cardsList">-Digital Market analyser</li>
+            <li class="cardsList">-Anything that i want to be</li>
+          </ul>
+        </div>
+        <div class="cards">
+          <h3>Why me</h3>
+          <div class="underline"></div>
+          <li class="cardsList">-Got all skills required</li>
+          <li class="cardsList">-My Real project experience</li>
+          <li class="cardsList">-My Royalty</li>
+          <li class="cardsList">-Commitment</li>
+          <li class="cardsList">-My Dreams</li>
+        </div>
+        <div class="cards">
+          <h3>My story</h3>
+          <div class="underline"></div>
+          <p>
+            I’m a UI&graphic designer not by chance or by college..but by
+            passion and love fo having agood impact on my surrounding society .
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="cardsContainer">
+        <div class="skillCards" id="hardSkills">
+          <h3>Hard skills</h3>
+          <div class="underline"></div>
+          <li class="cardsList">Planning software</li>
+          <li class="cardsList">Designing/creating applications</li>
+          <li class="cardsList">Writing programs</li>
+          <li class="cardsList">Update & expand existing apps</li>
+          <li class="cardsList">Writing and debugging code</li>
+        </div>
+        <div class="skillCards" id="softSkills">
+          <h3>Soft skills</h3>
+          <div class="underline"></div>
+          <li class="cardsList">Time management</li>
+          <li class="cardsList">Adaptability</li>
+          <li class="cardsList">Problem solving</li>
+          <li class="cardsList">Team work</li>
+          <li class="cardsList">Creativity</li>
+          <li class="cardsList">Leadership</li>
+        </div>
+        <div class="skillCards">
+          <h3>others</h3>
+          <div class="underline"></div>
+          <li class="cardsList">Comedian</li>
+          <li class="cardsList">Script writting</li>
+          <li class="cardsList">First Aid Skills</li>
+        </div>
+      </div>
+    </section>
+    <section id="portifolio">
+      <h2>Projects worked on</h2>
+      <div class="cardsContainer">
+        <div class="cards">
+            <h3>FrontEnd mentor Calculator app</h3>
+            <img  src="./images/andela1.jpg" alt="calculator app's image" />
+            <p id="articleTexts">
+              On this section i have build from scratches the app and added necessary functionality
+            </p>
+        </div>
+        <div class="cards"><h3>FrontEnd mentor Bill finder challenge</h3>
+        <img src="./images/bill finder.jpg" alt="bill app's image" />
+        <p id="articleTexts">
+        On this section i have build from scratches the app and added necessary functionality
+        </p></div>
+      </div>
+    </section>
+    <section id="blogs">
+      <h2>Blogs</h2>
+      <div class="cardsContainer">
+        <div class="cards">
+          <h3>UI design statistics in Rwanda</h3>
+          <img id="articleImg" src="./images/UI statistics.jpg" alt="Article's image" />
+          <p id="articleTexts">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of...<a href="#">Read more</a>
+          </p>
+          <div>127 Likes 108 Comments 1021 Visits</div>
+        </div>
+        <div class="cards" id="blogsOthers">
+          <h3>Most popular articles</h3>
+          <div class="underline"></div>
+          <ul>
+            <li class="cardsList">
+              Africa the most digitally visioned continent in
+            </li>
+            <li class="cardsList">
+              Surprising think i know you had no ida about Trello
+            </li>
+            <li class="cardsList">
+              No matter how expert you think you are, try this
+            </li>
+            <li class="cardsList">
+              Most plugins to become a senior UI designer
+            </li>
+            <li class="cardsList">
+              Programming becoming global livechanging sector
+            </li>
+            <li class="cardsList">How I became A champion in ATLP</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="contact_me">
+      <h2>Contact Me</h2>
+      <div class="cardsContainer">
+        <div id="ContactsDiv">
+          <h3>My Contacts</h3>
+          <ul id="mycontacts">
+            <li class="contacts"><i class="fa-solid fa-phone"></i></i>0787265586</li>
+            <li class="contacts"><i class="fa-regular fa-envelope"></i>nolivierserge@gmail.com</li>
+            <li class="contacts"><i class="fa-solid fa-location-dot"></i>Kigali-Rwanda</li>
+            <li class="contacts"><i class="fa-brands fa-facebook"></i>Ngabo Olivis</li>
+            <li class="underline"></li>
+            <li id="preLast">Leave us a feedBack here<i class="fa-solid fa-hand-back-point-right"></i></li>
+            <li id="lastList">Thanks for your time..</li>
+          </ul>
+        
+        </div>
+        <div id="forms">
+          
+          <form action="/" method="get"  class="cards" id="contactMeForm"> 
+            <h2>Reach  to us by filling this form</h2>
+            <input type="text" name="name" id="names" placeholder="Enter your name here" />
+            <div for="errNames" id="errNames" class="error"></div>
+            <input type="email" name="email" id="email" placeholder="Enter your email here" />
+            <div for="errEmail" id="errEmail" class="error"></div>
+            <input type="text" name="adress" id="adress" placeholder="Enter your Adress here" />
+            <div for="adress" id="errAdress" class="error"></div>
+            <textarea name="message" id="messageContents"></textarea>
+            <div for="messageContents" id="errMessages" class="error"></div>
+            <button class="btn" type="submit">send</button>
+          </form>
+           
+         
+          
+            <form action="/" class="cards" id="loginForm">
+              <h2>Login here</h2>
+              <label id="labUser">Username/Email</label>
+            <input type="text" id="loginEmai" placeholder="Enter your email here" />
+            <div for="Username" id="errUsername" class="error"></div>
+            <label id="labPass">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password here" />
+            <div for="password" id="errPassword"class="error"> </div>
+            <button class="btn" id="loginBtn" >Login</button>
+            <p><a href="#">Don't have an account???</a></p>
+            <p><a href="">Forgot Password <span>clickMe</span></a></p>
+            </form>
+          
+        </div>
+      </div>
+      
+      
+    </section>
+    
+  </body>
+  <footer>
+    <h2>All Rights Reserves To oliviersergeNIYONGABO2022</h2>
+  </footer>
+  <script src="script.js"></script>
+</html>

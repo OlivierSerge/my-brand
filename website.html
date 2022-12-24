@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://127.0.0.1:5500/? -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website</title>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    
+    <script>
+      tinymce.init({
+        selector: '#mytextarea',
+        plugins: [
+          'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
+          'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
+          'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount'
+        ],
+        toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | ' +
+          'alignleft aligncenter alignright alignjustify | ' +
+          'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+      });
+    </script>
+    <link rel="stylesheet" href="./website_files/style.css">
+    <script src="https://kit.fontawesome.com/b25eccd8aa.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="header">
+     
+      <h1>Ol<span>iv</span>is</h1>
+      <i class="fa-duotone fa-bars"></i>
+      <div id="navBar">
+        
+        <ul id="navMenu">
+          <li> <a href="http://127.0.0.1:5500/?#home">Home</a> </li>
+          <li> <a href="http://127.0.0.1:5500/?#about_Me">About</a> </li>
+          <li> <a href="http://127.0.0.1:5500/?#skills">Skills</a> </li>
+          <li> <a href="http://127.0.0.1:5500/?#portifolio">Portifofio</a> </li>
+          <li> <a href="http://127.0.0.1:5500/?#blogs">Blog</a> </li>
+          <li> <a href="http://127.0.0.1:5500/?#contact_me">contact me</a> </li>
+          <li class="btn">  <a href="http://127.0.0.1:5500/?#contact_me">login</a> </li>
+        </ul>
+      </div>
+    </div>
+    <section id="home">
+      <div class="textContents">
+        <h2>Hi,I’m <span>Olivier Serge,</span></h2>
+        <h1>Jr UI and Graphic Designer</h1>
+        <p>
+          There are more ways to choose the best or to know who is your best
+          candidate for the job.<br>
+          might be the one but before you decide there are a lot to know more
+          about me so,Know me
+        </p>
+        <div id="homeBtns">
+          <button class="btn"><a href="http://127.0.0.1:5500/?#about_Me">About Me</a> </button>
+          <button class="btn" onclick="location.href = &#39;https://olivierserge.github.io/OlivierCV/&#39;;">check CV</button>
+        </div>
+      </div>
+      <div class="profile">
+        <img src="./website_files/homeimg (2).jpg">
+      </div>
+    </section>
+    <section id="about_Me">
+      <h2>About Me</h2>
+      <div class="cardsContainer">
+        <div class="cards">
+          <h3>Who I am</h3>
+          <div class="underline"></div>
+
+          <ul>
+            <li class="cardsList">-University Graduate</li>
+            <li class="cardsList">-UI&amp;Graphic designer</li>
+            <li class="cardsList">-Frontend developer</li>
+            <li class="cardsList">-Digital Market analyser</li>
+            <li class="cardsList">-Anything that i want to be</li>
+          </ul>
+        </div>
+        <div class="cards">
+          <h3>Why me</h3>
+          <div class="underline"></div>
+          <li class="cardsList">-Got all skills required</li>
+          <li class="cardsList">-My Real project experience</li>
+          <li class="cardsList">-My Royalty</li>
+          <li class="cardsList">-Commitment</li>
+          <li class="cardsList">-My Dreams</li>
+        </div>
+        <div class="cards">
+          <h3>My story</h3>
+          <div class="underline"></div>
+          <p>
+            I’m a UI&amp;graphic designer not by chance or by college..but by
+            passion and love fo having agood impact on my surrounding society .
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="cardsContainer">
+        <div class="skillCards" id="hardSkills">
+          <h3>Hard skills</h3>
+          <div class="underline"></div>
+          <li class="cardsList">Planning software</li>
+          <li class="cardsList">Designing/creating applications</li>
+          <li class="cardsList">Writing programs</li>
+          <li class="cardsList">Update &amp; expand existing apps</li>
+          <li class="cardsList">Writing and debugging code</li>
+        </div>
+        <div class="skillCards" id="softSkills">
+          <h3>Soft skills</h3>
+          <div class="underline"></div>
+          <li class="cardsList">Time management</li>
+          <li class="cardsList">Adaptability</li>
+          <li class="cardsList">Problem solving</li>
+          <li class="cardsList">Team work</li>
+          <li class="cardsList">Creativity</li>
+          <li class="cardsList">Leadership</li>
+        </div>
+        <div class="skillCards">
+          <h3>others</h3>
+          <div class="underline"></div>
+          <li class="cardsList">Comedian</li>
+          <li class="cardsList">Script writting</li>
+          <li class="cardsList">First Aid Skills</li>
+        </div>
+      </div>
+    </section>
+    <section id="portifolio">
+      <h2>Projects worked on</h2>
+      <div class="cardsContainer">
+        <div class="cards">
+            <h3>FrontEnd mentor Calculator app</h3>
+            <img src="./website_files/andela1.jpg" alt="calculator app&#39;s image">
+            <p id="articleTexts">
+              On this section i have build from scratches the app and added necessary functionality
+            </p>
+        </div>
+        <div class="cards"><h3>FrontEnd mentor Bill finder challenge</h3>
+        <img src="./website_files/bill finder.jpg" alt="bill app&#39;s image">
+        <p id="articleTexts">
+        On this section i have build from scratches the app and added necessary functionality
+        </p></div>
+      </div>
+    </section>
+    <section id="blogs">
+      <h2>Blogs</h2>
+      <div class="cardsContainer">
+        <div class="cards">
+          <h3>UI design statistics in Rwanda</h3>
+          <img id="articleImg" src="./website_files/UI statistics.jpg" alt="Article&#39;s image">
+          <p id="articleTexts">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of...<a href="http://127.0.0.1:5500/?#">Read more</a>
+          </p>
+          <div>127 Likes 108 Comments 1021 Visits</div>
+        </div>
+        <div class="cards">
+          <h3>Most popular articles</h3>
+          <div class="underline"></div>
+          <ul>
+            <li class="cardsList">
+              Africa the most digitally visioned continent in
+            </li>
+            <li class="cardsList">
+              Surprising think i know you had no ida about Trello
+            </li>
+            <li class="cardsList">
+              No matter how expert you think you are, try this
+            </li>
+            <li class="cardsList">
+              Most plugins to become a senior UI designer
+            </li>
+            <li class="cardsList">
+              Programming becoming global livechanging sector
+            </li>
+            <li class="cardsList">How I became A champion in ATLP</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="contact_me">
+      <h2>Contact Me</h2>
+      <div class="cardsContainer">
+        <div id="textContents">
+          <h3>My Contacts</h3>
+          <ul id="mycontacts">
+            <li class="contacts"><i class="fa-solid fa-phone"></i>0787265586</li>
+            <li class="contacts"><i class="fa-regular fa-envelope"></i>nolivierserge@gmail.com</li>
+            <li class="contacts"><i class="fa-solid fa-location-dot"></i>Kigali-Rwanda</li>
+            <li class="contacts"><i class="fa-brands fa-facebook"></i>Ngabo Olivis</li>
+          </ul>
+        </div>
+        <div id="forms">
+          
+          <form action="http://127.0.0.1:5500/" method="get" class="cards" id="contactMeForm"> 
+            <h2>Reach  to us by filling this form</h2>
+            <input type="text" id="names" placeholder="Enter your name here">
+            <div for="errNames" id="errNames" class="error"></div>
+            <input type="email" id="email" placeholder="Enter your email here">
+            <div for="errEmail" id="errEmail" class="error"></div>
+            <input type="text" id="adress" placeholder="Enter your Adress here">
+            <div for="adress" id="errAdress" class="error"></div>
+            <textarea id="messageContents"></textarea>
+            <div for="messageContents" id="errMessages" class="error"></div>
+            <button class="btn" type="submit">send</button>
+          </form>
+           
+         
+          
+            <form action="http://127.0.0.1:5500/" method="get" class="cards" id="loginForm">
+              <h2>Login here</h2>
+              <label id="labUser">Username/Email</label>
+            <input type="text" id="loginEmai" placeholder="Enter your email here">
+            <div for="Username" id="errUsername" class="error"></div>
+            <label id="labPass">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password here">
+            <div for="password" id="errPassword" class="error"> </div>
+            <button class="btn">Login</button>
+            <p><a href="http://127.0.0.1:5500/?#">Don't have an account???</a></p>
+            <p><a href="http://127.0.0.1:5500/?">Forgot Password <span>clickMe</span></a></p>
+            </form>
+            
+          
+        </div>
+      </div>
+      
+      
+    </section>
+    <footer></footer>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+  <script src="./website_files/script.js"></script>
+
+</body></html>

@@ -1,0 +1,217 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <script
+      src="https://kit.fontawesome.com/b25eccd8aa.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Dash Board</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="hamburger">
+        <h1>Ol<span>iv</span>is<i class="fa-solid fa-bars"></i></h1>
+      </div>
+      <div id="navBar">
+        <ul id="navMenu">
+          <li>
+            <a href="#"><i class="fa-regular fa-user"></i>Olivier Serge</a>
+          </li>
+          <li class="btn"><a href="#">LogOut</a></li>
+        </ul>
+      </div>
+    </div>
+    <section id="dashboard">
+      <div id="dashMenu">
+        <ul>
+          <li class="navMenu"><a href="">Hero</a></li>
+          <li class="navMenu"><a href="">Articles</a></li>
+          <li class="navMenu"><a href="">messages</a></li>
+          <li class="navMenu"><a href="">users</a></li>
+          <li class="navMenu"><a href="#usageContents">Statistics</a></li>
+        </ul>
+      </div>
+      <div id="contents">
+        <div id="heroDashboard">
+          <h1>Welcome <span>Olivier Serge</span></h1>
+          <h3>people Are enjoying what you're doing keep posting</h3>
+          <button class="btn">create New Article</button>
+
+          <p><a href="http://">view Statistic</a></p>
+          <img src="./Screenshot from 2022-12-16 09-25-34.png" alt="" />
+          <div id="statistics">
+            <div class="box">
+              <p>Users</p>
+              <label id="usersCounter">0</label>
+            </div>
+            <div class="box">
+              <p>Visits</p>
+              <label id="visitsCounter">0</label>
+            </div>
+            <div class="box">
+              <p>Articles</p>
+              <label id="articlesCounter">0</label>
+            </div>
+            <div class="box">
+              <p>Messages</p>
+              <label id="messagesCounter">0</label>
+            </div>
+            <div class="box">
+              <p>Comments</p>
+              <label id="commentsCounter">0</label>
+            </div>
+            <div class="box">
+              <p>Likes</p>
+              <label id="likessCounter">0</label>
+            </div>
+          </div>
+        </div>
+        <section id="articles">
+          <form action="\" method="get" class="cards" id="one">
+            <h2>Publish New article</h2>
+
+            <label>Author</label
+            ><input type="text" id="author" placeholder="Enter Your names" />
+            <div class="error" id="errAuthor"></div>
+            <label>Title</label
+            ><input
+              type="text"
+              id="newTitle"
+              placeholder="Enter title of new article here"
+            />
+            <div class="error" id="errTitle"></div>
+            <label>Upload file</label><input type="file" id="fileUploader" />
+            <div class="error" id="errFile"></div>
+
+            <label>Type of contents</label
+            ><input
+              type="text"
+              id="category"
+              placeholder="What are the type of article'contents"
+            />
+            <div class="error" id="errCategory"></div>
+            <label>Article details</label>
+            <textarea id="contents"></textarea>
+            <div for="messageContents" class="error" id="errContents"></div>
+            <label>Publishing Date</label
+            ><input type="date" name="" id="time" />
+            <div class="error" id="errTime"></div>
+            <div class="btns">
+              <button class="btn" type="submit">Post</button>
+              <button class="btn" type="reset">Clear</button>
+              <button class="btn" type="reset">add to drafts</button>
+            </div>
+          </form>
+          <div id="trendings">
+            <h2>Your articles</h2>
+            <input
+              type="text"
+              id="newArticle"
+              placeholder="Enter title of your new article"
+            />
+            <button class="btn">Add New Article</button>
+            <div class="pContainer">
+              <p class="paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, nam
+                earum sint necessitatibus et consectetur adipisci perspiciatis,
+                a minima sequi enim pariatur similique repellat ipsam est aut
+                voluptatibus nostrum eum nulla reprehenderit omnis, inventore
+                voluptate explicabo laborum? Dolore soluta, quaerat non
+                laudantium, ipsum itaque qui quos maiores animi commodi dolor!
+              </p>
+            </div>
+            <div class="displaySection" id="localArticles">
+              <ul class="dashHeader yu">
+                <li id="ide">ID</li>
+                <li>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae, laboriosam.
+                </li>
+                <li>writter</li>
+                <li class="descripti">Description</li>
+                <li>writter</li>
+                <li>Edit</li>
+                <li>Delete</li>
+              </ul>
+              <ul class="dashHeader">
+                <li id="ide">ID</li>
+                <li>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Mollitia saepe quae, vitae cupiditate rerum ipsam iste
+                  deserunt unde tempore dolorum perferendis voluptatibus ipsa
+                  non pariatur similique vero totam hic! Illum!
+                </li>
+                <li>writter</li>
+                <li class="descripti">Description</li>
+                <li>writter</li>
+                <li>Edit</li>
+                <li>Delete</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="messages">
+          <h1>Clients Reviews</h1>
+          <div class="dashContainer" id="msgdataContents">
+            <div class="pContainer">
+              <p class="paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, nam
+                earum sint necessitatibus et consectetur adipisci perspiciatis,
+                a minima sequi enim pariatur similique repellat ipsam est aut
+                voluptatibus nostrum eum nulla reprehenderit omnis, inventore
+                voluptate explicabo laborum? Dolore soluta, quaerat non
+                laudantium, ipsum itaque qui quos maiores animi commodi dolor!
+              </p>
+            </div>
+
+            <div class="displaySection">
+              <ul class="dashHeader">
+                <li id="ide">ID</li>
+                <li>names</li>
+                <li>Adress</li>
+                <li class="descripti">Message</li>
+                <li>DAte</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section id="userDetails">
+          <h1>Registered user's credentials</h1>
+          <div class="dashContainer" id="userdataContents">
+            <div class="pContainer">
+              <p class="paragraph">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, nam
+                earum sint necessitatibus et consectetur adipisci perspiciatis,
+                a minima sequi enim pariatur similique repellat ipsam est aut
+                voluptatibus nostrum eum nulla reprehenderit omnis, inventore
+                voluptate explicabo laborum? Dolore soluta, quaerat non
+                laudantium, ipsum itaque qui quos maiores animi commodi dolor!
+              </p>
+            </div>
+            <div class="displaySection">
+              <ul class="dashHeader">
+                <li id="ide">ID</li>
+                <li>Name</li>
+                <li id="usr">Username</li>
+                <li id="pword">Password</li>
+                <li>profile picture</li>
+              </ul>
+              <ul class="dashHeader">
+                <li id="ide">ID</li>
+                <li>Name</li>
+                <li id="usr">Username</li>
+                <li id="pword">Password</li>
+                <li>profile picture</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </body>
+  <script src="dashboard.js"></script>
+</html>
