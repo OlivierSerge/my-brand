@@ -75,30 +75,38 @@
             <h2>Publish New article</h2>
 
             <label>Author</label
-            ><input type="text" id="author" placeholder="Enter Your names" />
+            ><input
+              type="text"
+              name="editor"
+              id="author"
+              placeholder="Enter Your names"
+            />
             <div class="error" id="errAuthor"></div>
             <label>Title</label
             ><input
               type="text"
+              name="title"
               id="newTitle"
               placeholder="Enter title of new article here"
             />
             <div class="error" id="errTitle"></div>
-            <label>Upload file</label><input type="file" id="fileUploader" />
+            <label>Upload file</label>
+            <input type="file" name="FileName" id="fileUploader" />
             <div class="error" id="errFile"></div>
 
             <label>Type of contents</label
             ><input
               type="text"
+              name="articleContents"
               id="category"
               placeholder="What are the type of article'contents"
             />
             <div class="error" id="errCategory"></div>
             <label>Article details</label>
-            <textarea id="contents"></textarea>
+            <textarea name="articleDetails" id="contents"></textarea>
             <div for="messageContents" class="error" id="errContents"></div>
             <label>Publishing Date</label
-            ><input type="date" name="" id="time" />
+            ><input type="date" name="date" id="time" />
             <div class="error" id="errTime"></div>
             <div class="btns">
               <button class="btn" type="submit">Post</button>

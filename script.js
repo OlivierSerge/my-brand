@@ -51,10 +51,9 @@ formData.addEventListener("submit", function (e) {
   const formContents = new FormData(formData);
   const messageData = {};
   for (let fields of formContents) {
-    console.log(fields, "yuuuuuu");
     messageData[fields[0]] = fields[1];
   }
-  console.log(messageData);
+
   localStorage.setItem("messageData", JSON.stringify(messageData));
   alert("Message submitted ");
   formData.reset();

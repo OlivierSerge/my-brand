@@ -2,7 +2,7 @@
 
 const errors = document.getElementsByClassName("error");
 const newad = JSON.parse(window.localStorage.getItem("users"));
-const form = document.getElementById("one");
+const newArticleForm = document.getElementById("one");
 const newTitle = document.querySelector("#newTitle");
 const errTitle = document.getElementById("errTitle");
 const newImage = document.getElementById("fileUploader");
@@ -65,11 +65,40 @@ newAuthor.addEventListener("blur", function (e) {
     errAuthor.innerText = "";
   }
 });
-const newData = document.createElement("div");
-newData.innerHTML = `<ul class="dashHeader">
-<li>${Date.now}</li>
-<li>${newad[0].userName}</li>
-<li>${newad[0].name}</li>
-<li>${newad[0].value}</li>
-</ul>
-`;
+newArticleForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const newArticleData = new FormData(newArticleForm);
+  const newArticleObj = {};
+  for (let fields of newArticleData) {
+    newArticleObj[fields[0]] = fields[1];
+  }
+  console.log(newArticleObj);
+  const allArticles = localStorage.getItem("articles");
+  if (allArticles === null) {
+    localStorage.setItem("articles", JSON.stringify([newArticleObj]));
+  } else {
+    const savedArticles = JSON.parse(localStorage.getItem("articles"));
+    savedArticles.push(newArticleObj);
+    localStorage.setItem("articles", JSON.stringify(savedArticles));
+  }
+  const UpdatedArticles = JSON.parse(localStorage.getItem("articles"));
+  const newData = document.createElement("ul");
+  newData.classList.add("dashHeader");
+  newData.innerHTML = `
+  <li id="ide">${UpdatedArticles.length + 1}</li>
+  <li>${UpdatedArticles[UpdatedArticles.length - 1].editor}</li>
+  <li>${UpdatedArticles[UpdatedArticles.length - 1].title}</li>
+  <li class="descripti">${
+    UpdatedArticles[UpdatedArticles.length - 1].articleDetails
+  }</li>
+  <li>${UpdatedArticles[UpdatedArticles.length - 1].date}</li>
+  <li>Edit</li>
+  <li>Delete</li>
+  
+  `;
+  const displaySection = document.querySelector(".displaySection");
+  displaySection.appendChild(newData);
+
+  alert("Message submitted ");
+  newArticleForm.reset();
+});
