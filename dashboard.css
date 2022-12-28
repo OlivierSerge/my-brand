@@ -261,14 +261,22 @@ a {
   width: 100%;
   border-radius: 20px;
 }
+.forId {
+  background-color: aqua !important;
+  width: 250px !important;
+}
 .dashHeader li {
   background-color: transparent;
   border: 1px solid black;
   width: 200px;
-  z-index: 0;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  /* padding: 5px; */
 
   /* display: ruby-text-container; */
-  height: 50px;
+  /* height: 50px; */
 }
 
 @media screen and (max-width: 425px) {
@@ -300,6 +308,7 @@ a {
     height: auto;
     opacity: 1;
     padding: 0;
+    overflow: hidden;
     border-bottom: 1px solid black;
   }
   .box {

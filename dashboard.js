@@ -77,7 +77,7 @@ for (let i = 0; i < UpdatedArticles.length; i++) {
     <li >${i + 1}</li>
     <li>${UpdatedArticles[i].editor}</li>
     <li>${UpdatedArticles[i].title}</li>
-    <li class="detaille">${UpdatedArticles[i].articleDetails}</li>
+    <li class="forId">${UpdatedArticles[i].articleDetails}</li>
     <li>${UpdatedArticles[i].date}</li>
     <li>Edit</li>
     <li>Delete</li>
