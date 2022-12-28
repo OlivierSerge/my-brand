@@ -1,12 +1,12 @@
 // newarticle Doms
 
-const UpdatedArticles = JSON.parse(localStorage.getItem("articles"));
 const localArticles = document.querySelector("#localArticles");
 const localClientMessages = JSON.parse(localStorage.getItem("messageData"));
+const UpdatedArticles = JSON.parse(localStorage.getItem("articles"));
 
 const errors = document.getElementsByClassName("error");
 const newad = JSON.parse(window.localStorage.getItem("users"));
-const newArticleForm = document.getElementById("one");
+const newArticleForm = document.getElementById("newArticleForm");
 const newTitle = document.querySelector("#newTitle");
 const errTitle = document.getElementById("errTitle");
 const newImage = document.getElementById("fileUploader");
@@ -20,7 +20,7 @@ const errTime = document.getElementById("errTime");
 const newContents = document.getElementById("contents");
 const errContents = document.getElementById("errContents");
 const modalCloseBtn = document.getElementById("modalClose");
-const Publish = document.getElementById("addNewBtn");
+const addNewArticle = document.getElementById("addNewBtn");
 const articleOutput = document.getElementById("singleArticleCard");
 const signedIn = JSON.parse(localStorage.getItem("signedInAccounts"));
 const logOutBtn = document.querySelector("#logOutBtn");
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 modalCloseBtn.addEventListener("click", (e) => {
   newArticleForm.style.visibility = "hidden";
 });
-Publish.addEventListener("click", (e) => {
+addNewArticle.addEventListener("click", (e) => {
   newArticleForm.style.visibility = "visible";
 });
 
@@ -133,13 +133,11 @@ newArticleForm.addEventListener("submit", function (e) {
   const newData = document.createElement("ul");
   newData.classList.add("dashHeader");
   newData.innerHTML = `
-  <li id="ide">${UpdatedArticles.length + 1}</li>
-  <li>${UpdatedArticles[UpdatedArticles.length - 1].editor}</li>
-  <li>${UpdatedArticles[UpdatedArticles.length - 1].title}</li>
-  <li class="descripti">${
-    UpdatedArticles[UpdatedArticles.length - 1].articleDetails
-  }</li>
-  <li>${UpdatedArticles[UpdatedArticles.length - 1].date}</li>
+  <li id="ide">${savedArticles.length + 1}</li>
+  <li>${newArticleObj.editor}</li>
+  <li>${newArticleObj.title}</li>
+  <li class="descripti">${newArticleObj.articleDetails}</li>
+  <li>${newArticleObj.date}</li>
   <li>Edit</li>
   <li>Delete</li>
   
