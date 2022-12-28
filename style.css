@@ -14,7 +14,7 @@ h2 {
   text-align: center;
   color: rgba(248, 232, 96, 0.63);
   font-size: 35px;
-  padding-top: 30px;
+  padding-top: 55px;
   font-weight: bolder;
 }
 /*---- nav-bar----*/
@@ -37,8 +37,11 @@ h2 {
 }
 #header h1 {
   padding-bottom: 5px;
+  font-size: 40px;
 }
-
+#header span {
+  font-size: 40px;
+}
 #navMenu {
   display: flex;
   margin-left: 63vw;
@@ -68,9 +71,19 @@ h2 {
   margin: 10px;
   border-radius: 30px;
   padding: 20px;
-  padding-top: 50px;
+  padding: 50px;
 }
-
+#singleArticleCard {
+  justify-content: space-between;
+  width: 600px;
+}
+#singleArticleCard h3 {
+  margin-bottom: 20px;
+}
+#reactionSection {
+  padding: 10px 0px 5px;
+  border: 1px solid rgba(248, 232, 96, 0.63);
+}
 /*------ home section----*/
 #home {
   height: 55vh;
@@ -145,8 +158,14 @@ span {
   height: auto;
 }
 .skillCards {
+  /* background-image: url(./images/profile.jpg);
+  background-position: center;
+  background-image: url(./images/profile.jpg);
+  background-position: center; */
+  background-size: cover;
   align-content: center;
   justify-items: center;
+
   border: 1px solid rgba(248, 232, 96, 0.63);
   width: 420px;
   margin: 50px;
@@ -157,6 +176,8 @@ span {
 }
 .skillCards li {
   list-style-type: disc;
+  background-color: transparent;
+  /* color: rgba(248, 232, 96, 0.63); */
 }
 #portifolio {
   width: 100%;
@@ -167,6 +188,7 @@ span {
   width: 100%;
   margin-bottom: 100px;
   height: auto;
+  justify-content: space-between;
 }
 #blogs li {
   list-style-type: disc;
@@ -174,9 +196,9 @@ span {
 }
 #blogs img {
   width: 100%;
+  padding: 10px 10px 10px 0px;
 }
 #ContactsDiv {
-  border: 1px solid red;
   width: 43%;
   background-color: transparent;
 }
@@ -202,6 +224,7 @@ input {
   height: 40px;
   border-radius: 10px;
   font-size: 20px;
+  padding: 10px;
 }
 
 #contactMeForm {
@@ -212,12 +235,19 @@ input {
   height: 400px;
   width: 600px;
 }
+/* #contactMeForm button {
+  width: fit-content;
+  padding: 5px;
+  margin-left: 40%;
+} */
 textarea {
-  margin: 5px 0 5px;
+  margin-bottom: 20px;
   color: black;
   width: auto;
-  height: 200px;
+  height: auto;
   font-size: 20px;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 #loginForm {
@@ -225,9 +255,9 @@ textarea {
   flex-direction: column;
   padding: 20px;
   background-color: transparent;
-  width: 300px;
+  width: 350px;
   height: 320px;
-  align-items: center;
+  align-items: left;
 }
 #loginForm h2 {
   text-align: center;
@@ -240,20 +270,22 @@ textarea {
 }
 #loginForm input {
   color: black;
-  width: 200px;
+  width: auto;
+  padding: 10px;
 }
 #loginForm button {
   width: 80px;
+  /* margin-left: -100px; */
 }
 #loginForm label {
   background-color: transparent;
   margin-bottom: 5px;
 }
 #labPass {
-  margin-left: -130px;
+  /* margin-left: -130px; */
 }
 #labUser {
-  margin-left: -80px;
+  /* margin-left: -80px; */
 }
 .error {
   color: red;
@@ -289,6 +321,11 @@ a {
 #contact_me h2 {
   background-color: transparent;
   color: rgba(248, 232, 96, 0.63);
+  margin-bottom: 30px;
+}
+#forImg img {
+  width: 100%;
+  height: 10%;
 }
 #contact_me input {
   background-color: white;
@@ -299,10 +336,17 @@ a {
 }
 #contact_me h3 {
   background-color: transparent;
+  color: rgba(248, 232, 96, 0.63);
+  margin-bottom: 30px;
+  font-size: 20px;
 }
 #mycontacts {
-  background-color: aliceblue;
-  color: aqua;
+  margin-left: 47%;
+  margin-top: 18%;
+}
+#mycontacts li {
+  font-size: 30px;
+  padding: 10px;
 }
 #portifolio img {
   width: 100%;
@@ -341,7 +385,15 @@ footer h2 {
   }
   header h1 {
     margin-left: 0px;
+    font-size: 15px;
   }
+  #header h1 {
+    font-size: 25px;
+  }
+  #header span {
+    font-size: 25px;
+  }
+
   header i {
     position: absolute;
     top: 0;
@@ -478,6 +530,12 @@ footer h2 {
     width: 100%;
     background-color: transparent;
   }
+  #mycontacts {
+    margin-left: unset;
+  }
+  #mycontacts li {
+    font-size: 20px;
+  }
   #contactMeForm {
     width: 60%;
     margin-left: 50px;
@@ -515,8 +573,16 @@ footer h2 {
     /* margin-left: 230px; */
   }
   footer {
+    border: 1px solid;
     width: 100%;
-    height: 30px;
+    height: 20px;
+
+    padding: 5px;
+  }
+  footer h2 {
     font-size: 10px;
+    text-align: center;
+    margin: unset;
+    margin-top: -4%;
   }
 }

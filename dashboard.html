@@ -21,7 +21,7 @@
           <li>
             <a href="#"><i class="fa-regular fa-user"></i>Olivier Serge</a>
           </li>
-          <li class="btn"><a href="#">LogOut</a></li>
+          <li class="btn" id="logOutBtn">LogOut</li>
         </ul>
       </div>
     </div>
@@ -72,7 +72,10 @@
         </div>
         <section id="articles">
           <form action="\" method="get" class="cards" id="one">
-            <h2>Publish New article</h2>
+            <div id="newHead">
+              <h2>Publish New article</h2>
+              <div id="modalClose"><p>X</p></div>
+            </div>
 
             <label>Author</label
             ><input
@@ -116,12 +119,8 @@
           </form>
           <div id="trendings">
             <h2>Your articles</h2>
-            <input
-              type="text"
-              id="newArticle"
-              placeholder="Enter title of your new article"
-            />
-            <button class="btn">Add New Article</button>
+
+            <button id="addNewBtn" class="btn">Add New Article</button>
             <div class="pContainer">
               <p class="paragraph">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, nam
@@ -135,26 +134,9 @@
             <div class="displaySection" id="localArticles">
               <ul class="dashHeader yu">
                 <li id="ide">ID</li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Beatae, laboriosam.
-                </li>
+                <li>Title</li>
                 <li>writter</li>
-                <li class="descripti">Description</li>
-                <li>writter</li>
-                <li>Edit</li>
-                <li>Delete</li>
-              </ul>
-              <ul class="dashHeader">
-                <li id="ide">ID</li>
-                <li>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Mollitia saepe quae, vitae cupiditate rerum ipsam iste
-                  deserunt unde tempore dolorum perferendis voluptatibus ipsa
-                  non pariatur similique vero totam hic! Illum!
-                </li>
-                <li>writter</li>
-                <li class="descripti">Description</li>
+                <li class="detaille">Description</li>
                 <li>writter</li>
                 <li>Edit</li>
                 <li>Delete</li>
@@ -176,7 +158,7 @@
               </p>
             </div>
 
-            <div class="displaySection">
+            <div class="displaySection" id="messageField">
               <ul class="dashHeader">
                 <li id="ide">ID</li>
                 <li>names</li>
@@ -200,14 +182,7 @@
                 laudantium, ipsum itaque qui quos maiores animi commodi dolor!
               </p>
             </div>
-            <div class="displaySection">
-              <ul class="dashHeader">
-                <li id="ide">ID</li>
-                <li>Name</li>
-                <li id="usr">Username</li>
-                <li id="pword">Password</li>
-                <li>profile picture</li>
-              </ul>
+            <div class="displaySection" id="ourUsers">
               <ul class="dashHeader">
                 <li id="ide">ID</li>
                 <li>Name</li>

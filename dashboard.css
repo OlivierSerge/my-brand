@@ -168,17 +168,29 @@ span {
   flex-direction: column;
   margin-bottom: -350px;
   padding: 20px;
-  visibility: visible;
+  visibility: hidden;
   z-index: 1;
-  margin-left: 320px;
+  margin-left: 220px;
   box-shadow: currentColor;
-  height: 50vh;
+  height: auto;
+  position: relative;
+}
+#newHead {
+  display: flex;
+  justify-content: space-between;
+}
+#newHead p {
+  background-color: red;
+  cursor: pointer;
 }
 #one label {
   margin-top: 10px;
 }
 #one input {
   height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
 }
 .error {
   color: red;
@@ -206,6 +218,7 @@ input {
   width: auto;
   background-color: white;
   color: black;
+  border: 1px solid rgba(248, 232, 96, 0.63);
 }
 #fileUploader {
   width: 100%;
@@ -219,6 +232,9 @@ a {
   margin-left: 0px;
   background-color: white;
   margin-top: 5px;
+  color: black;
+  border-radius: 5px;
+  border: 1px solid rgba(248, 232, 96, 0.63);
 }
 .dashContainer {
   border: 1px solid;
@@ -232,29 +248,29 @@ a {
   width: 50%;
   margin-left: 20%;
   height: 100px;
+  background-color: rgba(248, 232, 96, 0.63);
 }
 .displaySection {
   width: 100%;
   height: 500px;
-  background-color: rgba(248, 232, 96, 0.63);
+  background-image: url(./images/black-stone-texture-dark-slate-background-top-view_88281-1206.webp);
 }
 .dashHeader {
   display: flex;
   background-color: transparent;
   width: 100%;
+  border-radius: 20px;
 }
 .dashHeader li {
   background-color: transparent;
   border: 1px solid black;
   width: 200px;
+  z-index: 0;
+
+  /* display: ruby-text-container; */
+  height: 50px;
 }
-#ide {
-  width: 20px;
-}
-.descripti {
-  width: auto;
-  max-width: 300px;
-}
+
 @media screen and (max-width: 425px) {
   * {
     margin: 0;

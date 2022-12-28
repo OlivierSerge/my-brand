@@ -54,7 +54,7 @@
         </p>
         <div id="homeBtns">
           <button class="btn"><a href="#about_Me">About Me</a> </button>
-          <button class="btn" onclick="open('http://olivierserge.github.io/OlivierCV/', '_blank');">check CV</button>
+          <button class="btn" id="cvBtn" >check CV</button>
         </div>
       </div>
     
@@ -147,7 +147,7 @@
     <section id="blogs">
       <h2>Blogs</h2>
       <div class="cardsContainer">
-        <div class="cards">
+        <div class="cards" id="singleArticleCard">
           <h3>UI design statistics in Rwanda</h3>
           <img id="articleImg" src="./images/UI statistics.jpg" alt="Article's image" />
           <p id="articleTexts">
@@ -155,7 +155,8 @@
             the readable content of a page when looking at its layout. The point
             of...<a href="#">Read more</a>
           </p>
-          <div>127 Likes 108 Comments 1021 Visits</div>
+          <div id="reactionSection"> <label for="likes" id="likes">127</label>  <span>Likes</span>  <label for="commentsCounts" id="commentsCount">108</label>Comments <label for="visitsCounts" id="visitsCounts">1021</label>  Visits</div>
+        <div id="comments"></div>
         </div>
         <div class="cards" id="blogsOthers">
           <h3>Most popular articles</h3>
@@ -195,12 +196,13 @@
             <li id="preLast">Leave us a feedBack here<i class="fa-solid fa-hand-back-point-right"></i></li>
             <li id="lastList">Thanks for your time..</li>
           </ul>
+          <!-- <div id="forImg"><img src="./images/profile.jpg" alt="profile"></div> -->
         
         </div>
         <div id="forms">
           
           <form action="/" method="get"  class="cards" id="contactMeForm"> 
-            <h2>Reach  to us by filling this form</h2>
+            <h3>Reach  to us by filling this form</h3>
             <input type="text" name="name" id="names" placeholder="Enter your name here" />
             <div for="errNames" id="errNames" class="error"></div>
             <input type="email" name="email" id="email" placeholder="Enter your email here" />
@@ -215,7 +217,7 @@
          
           
             <form action="/" class="cards" id="loginForm">
-              <h2>Login here</h2>
+              <h3>Login here</h3>
               <label id="labUser">Username/Email</label>
             <input type="text" id="loginEmai" placeholder="Enter your email here" />
             <div for="Username" id="errUsername" class="error"></div>

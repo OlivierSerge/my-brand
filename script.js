@@ -21,27 +21,34 @@ const userPassword = document.getElementById("loginPassword");
 const errPassword = document.getElementById("errPassword");
 const loginButton = document.getElementById("loginBtn");
 const loginForm = document.getElementById("loginForm");
+const cvButton = document.getElementById("cvBtn");
+const signedIn = [];
 
-const errDiv = document.createElement("div");
+cvButton.addEventListener("click", (e) => {
+  window.open("http://olivierserge.github.io/OlivierCV/", "_blank");
+});
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   console.log("login button is clicked");
   console.log(userName.value);
   console.log(userPassword.value);
-  // location.replace("dashboard.html");
+
   for (let i = 0; i < localAdmins.length; i++) {
-    //   userName.onchange = function () {};
     if (
       userName.value === localAdmins[i].username &&
       userPassword.value === localAdmins[i].password
     ) {
-      console.log("nahageze----");
+      signedIn.push(localAdmins[i]);
+      localStorage.setItem("signedInAccounts", JSON.stringify(signedIn));
+
+      alert("welcome" + localAdmins[i].username);
       location.replace("dashboard.html");
       return;
       //     window.open = ("dashboard.html", "_blank");
       //     alert(userName.value);
     }
   }
+  location.replace("index.html");
   alert("Invalid credentials uuuuuu");
 });
 

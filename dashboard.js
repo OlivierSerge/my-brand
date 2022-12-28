@@ -1,5 +1,9 @@
 // newarticle Doms
 
+const UpdatedArticles = JSON.parse(localStorage.getItem("articles"));
+const localArticles = document.querySelector("#localArticles");
+const localClientMessages = JSON.parse(localStorage.getItem("messageData"));
+
 const errors = document.getElementsByClassName("error");
 const newad = JSON.parse(window.localStorage.getItem("users"));
 const newArticleForm = document.getElementById("one");
@@ -15,7 +19,79 @@ const newTime = document.getElementById("time");
 const errTime = document.getElementById("errTime");
 const newContents = document.getElementById("contents");
 const errContents = document.getElementById("errContents");
+const modalCloseBtn = document.getElementById("modalClose");
+const Publish = document.getElementById("addNewBtn");
+const articleOutput = document.getElementById("singleArticleCard");
+const signedIn = JSON.parse(localStorage.getItem("signedInAccounts"));
+const usersContainer = document.querySelector("#ourUsers");
+const messagesContainer = document.querySelector("#messageField");
 
+document.addEventListener("DOMContentLoaded", (e) => {
+  // alert("hello World");
+
+  if (signedIn.length === null || signedIn.length === 0 || signedIn === []) {
+    alert("you must sign in");
+    location.href = "index.html";
+  }
+});
+// for (let i = 0; i < newad.length; i++) {
+//   usersContainer.appendChild(
+//     (document.createElement("ul").classList.add("dashHeader").innerHTML += `
+//   <li id="ide">${i}</li>
+//   <li>${newad[i].name}</li>
+//   <li>${newad[i].username}</li>
+//   <li>${newad[i].password}</li>
+//   <li>Edit</li>
+//   <li>Delete</li>
+
+//   `)
+//   );
+// }
+
+for (let i = 0; i < newad.length; i++) {
+  usersContainer.innerHTML += `<ul class="dashHeader"><li >${i + 1}</li>
+  <li>${newad[i].name}</li>
+  <li>${newad[i].username}</li>
+  <li>${newad[i].password}</li>
+  </ul>
+  
+  `;
+}
+//  message Dom
+for (let i = 0; i < localClientMessages.length; i++) {
+  messagesContainer.innerHTML += `<ul class="dashHeader">
+  <li >${i + 1}</li>
+  <li>${localClientMessages[i].name}</li>
+  <li>${localClientMessages[i].email}</li>
+  <li>${localClientMessages[i].adress}</li>
+  <li>${localClientMessages[i].message}</li>
+  
+  </ul>
+  
+  `;
+}
+//
+for (let i = 0; i < UpdatedArticles.length; i++) {
+  localArticles.innerHTML += `
+  <ul class="dashHeader">
+    <li >${i + 1}</li>
+    <li>${UpdatedArticles[i].editor}</li>
+    <li>${UpdatedArticles[i].title}</li>
+    <li class="detaille">${UpdatedArticles[i].articleDetails}</li>
+    <li>${UpdatedArticles[i].date}</li>
+    <li>Edit</li>
+    <li>Delete</li>
+    </ul>
+    `;
+}
+
+const logOutBtn = document.querySelector("#logOutBtn");
+logOutBtn.addEventListener("click", (e) => {
+  signedIn.pop(signedIn[signedIn.length - 1]);
+  alert(signedIn.length);
+  localStorage.setItem("signedInAccounts", JSON.stringify(signedIn));
+  location.href = "index.html";
+});
 //listening to new article form contents
 newTitle.addEventListener("blur", function (e) {
   console.log(newTitle.value);
@@ -81,7 +157,6 @@ newArticleForm.addEventListener("submit", function (e) {
     savedArticles.push(newArticleObj);
     localStorage.setItem("articles", JSON.stringify(savedArticles));
   }
-  const UpdatedArticles = JSON.parse(localStorage.getItem("articles"));
   const newData = document.createElement("ul");
   newData.classList.add("dashHeader");
   newData.innerHTML = `
@@ -96,9 +171,21 @@ newArticleForm.addEventListener("submit", function (e) {
   <li>Delete</li>
   
   `;
-  const displaySection = document.querySelector(".displaySection");
-  displaySection.appendChild(newData);
+
+  // const displaySection = document.querySelector(".displaySection");
+  localArticles.appendChild(newData);
 
   alert("Message submitted ");
   newArticleForm.reset();
+});
+
+modalCloseBtn.addEventListener("click", (e) => {
+  newArticleForm.style.visibility = "hidden";
+});
+Publish.addEventListener("click", (e) => {
+  newArticleForm.style.visibility = "visible";
+});
+
+document.addEventListener("DOMContentLoaded", (e) => {
+  displayArticles();
 });
