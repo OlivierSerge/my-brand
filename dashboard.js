@@ -23,6 +23,7 @@ const modalCloseBtn = document.getElementById("modalClose");
 const Publish = document.getElementById("addNewBtn");
 const articleOutput = document.getElementById("singleArticleCard");
 const signedIn = JSON.parse(localStorage.getItem("signedInAccounts"));
+const logOutBtn = document.querySelector("#logOutBtn");
 const usersContainer = document.querySelector("#ourUsers");
 const messagesContainer = document.querySelector("#messageField");
 
@@ -33,6 +34,16 @@ document.addEventListener("DOMContentLoaded", (e) => {
     alert("you must sign in");
     location.href = "index.html";
   }
+});
+modalCloseBtn.addEventListener("click", (e) => {
+  newArticleForm.style.visibility = "hidden";
+});
+Publish.addEventListener("click", (e) => {
+  newArticleForm.style.visibility = "visible";
+});
+
+document.addEventListener("DOMContentLoaded", (e) => {
+  displayArticles();
 });
 // for (let i = 0; i < newad.length; i++) {
 //   usersContainer.appendChild(
@@ -48,44 +59,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
 //   );
 // }
 
-for (let i = 0; i < newad.length; i++) {
-  usersContainer.innerHTML += `<ul class="dashHeader"><li >${i + 1}</li>
-  <li>${newad[i].name}</li>
-  <li>${newad[i].username}</li>
-  <li>${newad[i].password}</li>
-  </ul>
-  
-  `;
-}
-//  message Dom
-for (let i = 0; i < localClientMessages.length; i++) {
-  messagesContainer.innerHTML += `<ul class="dashHeader">
-  <li >${i + 1}</li>
-  <li>${localClientMessages[i].name}</li>
-  <li>${localClientMessages[i].email}</li>
-  <li>${localClientMessages[i].adress}</li>
-  <li>${localClientMessages[i].message}</li>
-  
-  </ul>
-  
-  `;
-}
-//
-for (let i = 0; i < UpdatedArticles.length; i++) {
-  localArticles.innerHTML += `
-  <ul class="dashHeader">
-    <li >${i + 1}</li>
-    <li>${UpdatedArticles[i].editor}</li>
-    <li>${UpdatedArticles[i].title}</li>
-    <li class="forId">${UpdatedArticles[i].articleDetails}</li>
-    <li>${UpdatedArticles[i].date}</li>
-    <li>Edit</li>
-    <li>Delete</li>
-    </ul>
-    `;
-}
-
-const logOutBtn = document.querySelector("#logOutBtn");
 logOutBtn.addEventListener("click", (e) => {
   signedIn.pop(signedIn[signedIn.length - 1]);
   alert(signedIn.length);
@@ -179,13 +152,40 @@ newArticleForm.addEventListener("submit", function (e) {
   newArticleForm.reset();
 });
 
-modalCloseBtn.addEventListener("click", (e) => {
-  newArticleForm.style.visibility = "hidden";
-});
-Publish.addEventListener("click", (e) => {
-  newArticleForm.style.visibility = "visible";
-});
+//  message Dom
+for (let i = 0; i < localClientMessages.length; i++) {
+  messagesContainer.innerHTML += `<ul class="dashHeader">
+  <li >${i + 1}</li>
+  <li>${localClientMessages[i].name}</li>
+  <li>${localClientMessages[i].email}</li>
+  <li>${localClientMessages[i].adress}</li>
+  <li>${localClientMessages[i].message}</li>
+  
+  </ul>
+  
+  `;
+}
+//
+for (let i = 0; i < newad.length; i++) {
+  usersContainer.innerHTML += `<ul class="dashHeader"><li >${i + 1}</li>
+    <li>${newad[i].name}</li>
+    <li>${newad[i].username}</li>
+    <li>${newad[i].password}</li>
+    </ul>
+    
+    `;
+}
 
-document.addEventListener("DOMContentLoaded", (e) => {
-  displayArticles();
-});
+for (let i = 0; i < UpdatedArticles.length; i++) {
+  localArticles.innerHTML += `
+    <ul class="dashHeader">
+      <li >${i + 1}</li>
+      <li>${UpdatedArticles[i].editor}</li>
+      <li>${UpdatedArticles[i].title}</li>
+      <li class="forId">${UpdatedArticles[i].articleDetails}</li>
+      <li>${UpdatedArticles[i].date}</li>
+      <li>Edit</li>
+      <li>Delete</li>
+      </ul>
+      `;
+}
