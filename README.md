@@ -15,7 +15,7 @@ the codes in this project help you know more about me in different sections allo
 
 ## Documentation
 
-List of endpoints exposed by the service
+
 
 ## Setup
 

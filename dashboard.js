@@ -2,8 +2,8 @@
 
 const localArticles = document.querySelector("#localArticles");
 const localClientMessages = JSON.parse(localStorage.getItem("messageData"));
-const UpdatedArticles = JSON.parse(localStorage.getItem("articles"));
 
+const UpdatedArticles = JSON.parse(localStorage.getItem("articles"));
 const errors = document.getElementsByClassName("error");
 const newad = JSON.parse(window.localStorage.getItem("users"));
 const newArticleForm = document.getElementById("newArticleForm");
@@ -42,9 +42,9 @@ addNewArticle.addEventListener("click", (e) => {
   newArticleForm.style.visibility = "visible";
 });
 
-document.addEventListener("DOMContentLoaded", (e) => {
-  displayArticles();
-});
+// document.addEventListener("DOMContentLoaded", (e) => {
+//   displayArticles();
+// });
 // for (let i = 0; i < newad.length; i++) {
 //   usersContainer.appendChild(
 //     (document.createElement("ul").classList.add("dashHeader").innerHTML += `
@@ -116,27 +116,29 @@ newAuthor.addEventListener("blur", function (e) {
 });
 newArticleForm.addEventListener("submit", function (e) {
   e.preventDefault();
+  alert("hellooo");
   const newArticleData = new FormData(newArticleForm);
   const newArticleObj = {};
   for (let fields of newArticleData) {
     newArticleObj[fields[0]] = fields[1];
   }
   console.log(newArticleObj);
-  const allArticles = localStorage.getItem("articles");
+  const allArticles = JSON.parse(localStorage.getItem("articles"));
   if (allArticles === null) {
     localStorage.setItem("articles", JSON.stringify([newArticleObj]));
   } else {
     const savedArticles = JSON.parse(localStorage.getItem("articles"));
     savedArticles.push(newArticleObj);
     localStorage.setItem("articles", JSON.stringify(savedArticles));
+    // const allArticles = JSON.parse(localStorage.getItem("articles"));
   }
   const newData = document.createElement("ul");
   newData.classList.add("dashHeader");
   newData.innerHTML = `
-  <li id="ide">${savedArticles.length + 1}</li>
-  <li>${newArticleObj.editor}</li>
+  <li id="ide">${allArticles.length + 1}</li>
   <li>${newArticleObj.title}</li>
-  <li class="descripti">${newArticleObj.articleDetails}</li>
+  <li>${newArticleObj.writter}</li>
+  <li class="forId">${newArticleObj.articleDetails}</li>
   <li>${newArticleObj.date}</li>
   <li>Edit</li>
   <li>Delete</li>
@@ -151,18 +153,18 @@ newArticleForm.addEventListener("submit", function (e) {
 });
 
 //  message Dom
-for (let i = 0; i < localClientMessages.length; i++) {
-  messagesContainer.innerHTML += `<ul class="dashHeader">
-  <li >${i + 1}</li>
-  <li>${localClientMessages[i].name}</li>
-  <li>${localClientMessages[i].email}</li>
-  <li>${localClientMessages[i].adress}</li>
-  <li>${localClientMessages[i].message}</li>
-  
-  </ul>
-  
-  `;
-}
+// for (let i = 0; i < localClientMessages.length; i++) {
+//   messagesContainer.innerHTML += `<ul class="dashHeader">
+//   <li >${i + 1}</li>
+//   <li>${localClientMessages[i].name}</li>
+//   <li>${localClientMessages[i].email}</li>
+//   <li>${localClientMessages[i].adress}</li>
+//   <li>${localClientMessages[i].message}</li>
+
+//   </ul>
+
+//   `;
+// }
 //
 for (let i = 0; i < newad.length; i++) {
   usersContainer.innerHTML += `<ul class="dashHeader"><li >${i + 1}</li>
