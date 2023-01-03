@@ -23,7 +23,30 @@ const loginButton = document.getElementById("loginBtn");
 const loginForm = document.getElementById("loginForm");
 const cvButton = document.getElementById("cvBtn");
 const signedIn = [];
+const readMore = document.querySelector("#readMore");
+const clientSideblogParagraph = document.querySelector("#articleTexts");
+const hamburgerIcon = document.querySelector("#hamburg");
+const mediaquery = window.matchMedia("(max-width: 425px)");
 
+readMore.addEventListener("click", (e) => {
+  const UpdatedArticles = JSON.parse(localStorage.getItem("articles"));
+  // console.log(UpdatedArticles);
+  // for (let i = 0; i < UpdatedArticles.length; i++) {
+  //   clientSideblogParagraph.innerText += UpdatedArticles[i];
+  // }
+
+  clientSideblogParagraph.innerText += UpdatedArticles[6].editor;
+});
+hamburgerIcon.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const navMenu = document.getElementById("navMenu");
+  if (navMenu.style.display === "none" && mediaquery.matches) {
+    navMenu.style.display = "flex";
+  } else {
+    navMenu.style.display = "none";
+  }
+});
 cvButton.addEventListener("click", (e) => {
   window.open("http://olivierserge.github.io/OlivierCV/", "_blank");
 });

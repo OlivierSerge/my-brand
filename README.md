@@ -23,7 +23,8 @@ Step-by-step instructions on how to get the code set up locally. This may includ
 
 ### Dependencies
 
-List of libraries, tools, etc needed (e.g. yarn, node.js, python, etc)
+firebase,node.js
+
 
 ### Getting Started
 

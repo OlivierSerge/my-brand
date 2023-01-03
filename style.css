@@ -177,6 +177,7 @@ span {
 .skillCards li {
   list-style-type: disc;
   background-color: transparent;
+  margin-bottom: 10px;
   /* color: rgba(248, 232, 96, 0.63); */
 }
 #portifolio {
@@ -341,16 +342,22 @@ a {
   font-size: 20px;
 }
 #mycontacts {
-  margin-left: 47%;
+  margin-left: 45%;
   margin-top: 18%;
 }
 #mycontacts li {
   font-size: 30px;
   padding: 10px;
 }
+#mycontacts i {
+  background-color: transparent;
+  padding: 20px;
+}
 #portifolio img {
   width: 100%;
 }
+/* 0787146171 */
+/* 0788551680 */
 
 .underline {
   width: 290px;
@@ -380,8 +387,9 @@ footer h2 {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    background-color: transparent;
-    width: 100%;
+    background-color: black;
+    width: 75%;
+    height: fit-content;
   }
   header h1 {
     margin-left: 0px;
@@ -401,13 +409,15 @@ footer h2 {
   }
 
   #navMenu {
-    display: flex;
+    display: none;
     flex-direction: column;
-
+    border: 1px solid rgba(248, 232, 96, 0.63);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     position: absolute;
     width: 100px;
     position: absolute;
-    top: 15px;
+    top: 25px;
     left: -30px;
   }
   #navMenu li {
@@ -419,7 +429,6 @@ footer h2 {
     color: rgba(104, 248, 96, 0.63);
     font-size: 12px;
     font-weight: bold;
-    motion: auto;
     cursor: pointer;
   }
 
@@ -429,7 +438,7 @@ footer h2 {
     background-size: cover;
     max-width: 100%;
     height: 220px;
-    padding-top: 80px;
+    padding-top: 150px;
     margin-bottom: unset;
   }
 
@@ -462,7 +471,7 @@ footer h2 {
   .textContents {
     background-color: transparent;
     width: 100%;
-    padding-top: 0px;
+    margin-top: -150px;
     min-height: 200px;
     min-width: 200px;
     flex-wrap: nowrap;
@@ -536,6 +545,10 @@ footer h2 {
   #mycontacts li {
     font-size: 20px;
   }
+  #mycontacts i {
+    padding: 10px;
+    background-color: transparent;
+  }
   #contactMeForm {
     width: 60%;
     margin-left: 50px;
@@ -557,19 +570,28 @@ footer h2 {
   }
   #hamburger {
     display: flex;
+    flex-direction: row;
     width: auto;
     justify-content: space-between;
-    margin-top: -10px;
-    padding-bottom: 0px;
-    margin-left: -15px;
+    margin-top: -5px;
+    padding-bottom: unset;
+    margin-left: unset;
     width: 100%;
     background-color: transparent;
+    height: 20px;
   }
   #hamburger h1 {
     background-color: transparent;
   }
   .fa-solid {
     visibility: visible;
+
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-right: -10px;
+    /* margin-right: 90px; */
+
     /* margin-left: 230px; */
   }
   footer {
