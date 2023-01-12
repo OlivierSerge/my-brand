@@ -2,7 +2,6 @@
 
 <!-- https://olivierserge.github.io/my-brand/
 https://clinquant-cassata-6b88b4.netlify.app/dashboard.html -->
-
 <!--  -->
 
 ## my-brand [codeclimate badge] [testing badge]

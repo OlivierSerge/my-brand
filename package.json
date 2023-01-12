@@ -1,0 +1,24 @@
+{
+  "name": "my-brand",
+  "version": "1.0.0",
+  "description": "<!-- https://olivierserge.github.io/my-brand/ https://clinquant-cassata-6b88b4.netlify.app/dashboard.html --> <!--  -->",
+  "main": "dashboard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlivierSerge/my-brand.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlivierSerge/my-brand/issues"
+  },
+  "homepage": "https://github.com/OlivierSerge/my-brand#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "toastify-js": "^1.12.0"
+  }
+}

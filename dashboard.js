@@ -1,5 +1,29 @@
-// newarticle Doms
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import {
+  getStorage,
+  ref,
+  getDownloadURL,
+  uploadBytesResumable,
+} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyBfPNCafR-_F7TwgHK9cnUSilFgpx5Q3MY",
+  authDomain: "capstone-project-atlp.firebaseapp.com",
+  projectId: "capstone-project-atlp",
+  storageBucket: "capstone-project-atlp.appspot.com",
+  messagingSenderId: "1001315819339",
+  appId: "1:1001315819339:web:124c64acd9a6799d3ed2ce",
+};
 
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
 const localArticles = document.querySelector("#localArticles");
 const localClientMessages = JSON.parse(localStorage.getItem("messageData"));
 
@@ -26,12 +50,22 @@ const signedIn = JSON.parse(localStorage.getItem("signedInAccounts"));
 const logOutBtn = document.querySelector("#logOutBtn");
 const usersContainer = document.querySelector("#ourUsers");
 const messagesContainer = document.querySelector("#messageField");
+const firebaseArticles = [];
+const firebaseMessages = [];
+let uploadedImageUrl;
+console.log(messagesContainer);
+newImage.addEventListener("change", async function (e) {
+  const selectedImage = e.target.files[0];
 
-document.addEventListener("DOMContentLoaded", (e) => {
-  // alert("hello World");
-
+  const imageRef = ref(storage, `images/${selectedImage.name}`);
+  const uploadTask = await uploadBytesResumable(imageRef, selectedImage);
+  const imageUrl = await getDownloadURL(uploadTask.ref);
+  uploadedImageUrl = imageUrl;
+  console.log(uploadedImageUrl);
+});
+window.addEventListener("DOMContentLoaded", (e) => {
   if (signedIn.length === null || signedIn.length === 0 || signedIn === []) {
-    alert("you must sign in");
+    console.log("you must sign in");
     location.href = "index.html";
   }
 });
@@ -42,9 +76,28 @@ addNewArticle.addEventListener("click", (e) => {
   newArticleForm.style.visibility = "visible";
 });
 
-// document.addEventListener("DOMContentLoaded", (e) => {
-//   displayArticles();
-// });
+document.addEventListener("DOMContentLoaded", async (e) => {
+  const docSnap = await getDocs(collection(db, "articles"));
+
+  docSnap.forEach((doc) => {
+    firebaseArticles.push({ ...doc.data(), id: doc.id });
+  });
+  console.log("all articles from firebase:", firebaseArticles);
+
+  for (let i = 0; i < firebaseArticles.length; i++) {
+    localArticles.innerHTML += `
+      <ul class="dashHeader">
+        <li >${i + 1}</li>
+        <li>${firebaseArticles[i].editor}</li>
+        <li>${firebaseArticles[i].title}</li>
+        <li class="forId">${firebaseArticles[i].articleDetails}</li>
+        <li>${firebaseArticles[i].date}</li>
+        <li>Edit</li>
+        <li>Delete</li>
+        </ul>
+        `;
+  }
+});
 // for (let i = 0; i < newad.length; i++) {
 //   usersContainer.appendChild(
 //     (document.createElement("ul").classList.add("dashHeader").innerHTML += `
@@ -116,56 +169,61 @@ newAuthor.addEventListener("blur", function (e) {
 });
 newArticleForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  alert("hellooo");
+
   const newArticleData = new FormData(newArticleForm);
   const newArticleObj = {};
   for (let fields of newArticleData) {
     newArticleObj[fields[0]] = fields[1];
   }
+  newArticleObj.File = uploadedImageUrl;
+  console.log(newArticleObj.File);
   console.log(newArticleObj);
-  const allArticles = JSON.parse(localStorage.getItem("articles"));
-  if (allArticles === null) {
-    localStorage.setItem("articles", JSON.stringify([newArticleObj]));
-  } else {
-    const savedArticles = JSON.parse(localStorage.getItem("articles"));
-    savedArticles.push(newArticleObj);
-    localStorage.setItem("articles", JSON.stringify(savedArticles));
-    // const allArticles = JSON.parse(localStorage.getItem("articles"));
-  }
+
+  addDoc(collection(db, "articles"), newArticleObj);
   const newData = document.createElement("ul");
   newData.classList.add("dashHeader");
   newData.innerHTML = `
-  <li id="ide">${allArticles.length + 1}</li>
-  <li>${newArticleObj.title}</li>
-  <li>${newArticleObj.writter}</li>
-  <li class="forId">${newArticleObj.articleDetails}</li>
-  <li>${newArticleObj.date}</li>
-  <li>Edit</li>
-  <li>Delete</li>
-  
-  `;
+    <li id="ide">${firebaseArticles.length + 1}</li>
+    <li>${newArticleObj.title}</li>
+    <li>${newArticleObj.writter}</li>
+    <li class="forId">${newArticleObj.articleDetails}</li>
+    <li>${newArticleObj.date}</li>
+    <li>Edit</li>
+    <li>Delete</li>
 
-  // const displaySection = document.querySelector(".displaySection");
-  localArticles.appendChild(newData);
+    `;
 
-  alert("Message submitted ");
+  //   // const displaySection = document.querySelector(".displaySection");
+  //   localArticles.appendChild(newData);
+
+  console.log("Article created ");
   newArticleForm.reset();
 });
 
 //  message Dom
-// for (let i = 0; i < localClientMessages.length; i++) {
-//   messagesContainer.innerHTML += `<ul class="dashHeader">
-//   <li >${i + 1}</li>
-//   <li>${localClientMessages[i].name}</li>
-//   <li>${localClientMessages[i].email}</li>
-//   <li>${localClientMessages[i].adress}</li>
-//   <li>${localClientMessages[i].message}</li>
+document.addEventListener("DOMContentLoaded", async function (e) {
+  e.preventDefault();
+  const docSnap = await getDocs(collection(db, "messages"));
 
-//   </ul>
+  docSnap.forEach((doc) => {
+    firebaseMessages.push({ ...doc.data(), id: doc.id });
+  });
+  console.log("all messages from firebase:", firebaseMessages);
+  for (let i = 0; i < firebaseMessages.length; i++) {
+    console.log(firebaseMessages.length);
+    messagesContainer.innerHTML += `<ul class="dashHeader">
+    <li >${i + 1}</li>
+    <li>${firebaseMessages[i].name}</li>
+    <li>${firebaseMessages[i].email}</li>
+    <li>${firebaseMessages[i].adress}</li>
+    <li>${firebaseMessages[i].message}</li>
+  
+    </ul>
+  
+    `;
+  }
+});
 
-//   `;
-// }
-//
 for (let i = 0; i < newad.length; i++) {
   usersContainer.innerHTML += `<ul class="dashHeader"><li >${i + 1}</li>
     <li>${newad[i].name}</li>
@@ -174,18 +232,4 @@ for (let i = 0; i < newad.length; i++) {
     </ul>
     
     `;
-}
-
-for (let i = 0; i < UpdatedArticles.length; i++) {
-  localArticles.innerHTML += `
-    <ul class="dashHeader">
-      <li >${i + 1}</li>
-      <li>${UpdatedArticles[i].editor}</li>
-      <li>${UpdatedArticles[i].title}</li>
-      <li class="forId">${UpdatedArticles[i].articleDetails}</li>
-      <li>${UpdatedArticles[i].date}</li>
-      <li>Edit</li>
-      <li>Delete</li>
-      </ul>
-      `;
 }

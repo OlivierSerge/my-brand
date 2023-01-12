@@ -94,7 +94,7 @@
             />
             <div class="error" id="errTitle"></div>
             <label>Upload file</label>
-            <input type="file" name="FileName" id="fileUploader" />
+            <input type="file" id="fileUploader" />
             <div class="error" id="errFile"></div>
 
             <label>Type of contents</label
@@ -196,5 +196,6 @@
       </div>
     </section>
   </body>
-  <script src="dashboard.js"></script>
+  <script type="module" src="dashboard.js"></script>
+  <script type="module" src="firebaseConfig.js" defer></script>
 </html>

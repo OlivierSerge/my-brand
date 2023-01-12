@@ -1,8 +1,28 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyBfPNCafR-_F7TwgHK9cnUSilFgpx5Q3MY",
+  authDomain: "capstone-project-atlp.firebaseapp.com",
+  projectId: "capstone-project-atlp",
+  storageBucket: "capstone-project-atlp.appspot.com",
+  messagingSenderId: "1001315819339",
+  appId: "1:1001315819339:web:124c64acd9a6799d3ed2ce",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 const admins = [
   { name: "peter Mugabo", username: "MugaboP", password: "1234" },
   { name: "Olivier Serge", username: "olivis", password: "12345" },
   { name: "Aline Mutesi", username: "AlineM", password: "123456" },
 ];
+
 window.localStorage.setItem("users", JSON.stringify(admins));
 const localAdmins = JSON.parse(window.localStorage.getItem("users"));
 
@@ -27,9 +47,19 @@ const readMore = document.querySelector("#readMore");
 const clientSideblogParagraph = document.querySelector("#articleTexts");
 const hamburgerIcon = document.querySelector("#hamburg");
 const mediaquery = window.matchMedia("(max-width: 425px)");
+const firebaseMessages = [];
+
+window.addEventListener("DOMContentLoaded", async function (e) {
+  e.preventDefault();
+  const docSnap = await getDocs(collection(db, "messages"));
+
+  docSnap.forEach((doc) => {
+    firebaseMessages.push({ ...doc.data(), id: doc.id });
+  });
+  console.log("all messages from firebase:", firebaseMessages);
+});
 
 readMore.addEventListener("click", (e) => {
-  const UpdatedArticles = JSON.parse(localStorage.getItem("articles"));
   // console.log(UpdatedArticles);
   // for (let i = 0; i < UpdatedArticles.length; i++) {
   //   clientSideblogParagraph.innerText += UpdatedArticles[i];
@@ -37,6 +67,22 @@ readMore.addEventListener("click", (e) => {
 
   clientSideblogParagraph.innerText += UpdatedArticles[6].editor;
 });
+
+Toastify({
+  text: "Welcome",
+  duration: 3000,
+  destination: "https://github.com/apvarun/toastify-js",
+  newWindow: true,
+  close: true,
+  gravity: "top", // `top` or `bottom`
+  position: "right", // `left`, `center` or `right`
+  stopOnFocus: true, // Prevents dismissing of toast on hover
+  style: {
+    background: "linear-gradient(to right, #00b09b, #96c93d)",
+  },
+  onClick: function () {}, // Callback after click
+}).showToast();
+
 hamburgerIcon.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -52,9 +98,6 @@ cvButton.addEventListener("click", (e) => {
 });
 loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  console.log("login button is clicked");
-  console.log(userName.value);
-  console.log(userPassword.value);
 
   for (let i = 0; i < localAdmins.length; i++) {
     if (
@@ -63,34 +106,27 @@ loginForm.addEventListener("submit", function (e) {
     ) {
       signedIn.push(localAdmins[i]);
       localStorage.setItem("signedInAccounts", JSON.stringify(signedIn));
-
-      alert("welcome" + localAdmins[i].username);
+      console.log("welcome" + localAdmins[i].username);
       location.replace("dashboard.html");
       return;
-      //     window.open = ("dashboard.html", "_blank");
-      //     alert(userName.value);
     }
   }
   location.replace("index.html");
-  alert("Invalid credentials uuuuuu");
+  console.log("Invalid credentials no such data found");
 });
 
 formData.addEventListener("submit", function (e) {
   e.preventDefault();
-  console.log("hellooo e");
   const formContents = new FormData(formData);
   const messageData = {};
   for (let fields of formContents) {
     messageData[fields[0]] = fields[1];
   }
-
-  localStorage.setItem("messageData", JSON.stringify(messageData));
-  alert("Message submitted ");
+  addDoc(collection(db, "messages"), messageData);
+  console.log("Message submitted ");
   formData.reset();
 });
-// FormData.addEventListener("submit", function (e) {});
 names.addEventListener("blur", function (e) {
-  console.log("changes are made");
   if (names.value.length > 20) {
     alert("hello");
     errNames.style.color = "red";
